@@ -75,11 +75,19 @@
     }
 
 
-    function makeCoffee() {
+    function makeCoffee(drinkType) {
 
     	coffeeImage.attr('src', 'static/coffee_machine.jpg');
     	setTimeout(showCoffeeMug, 1500)
     	setTimeout(showCoffeeBean, 4000)
+
+    	const drinksOrdered = [];
+    	drinksOrdered.push(drinkType);
+    	console.log(drinksOrdered);
+    }
+
+    function coffeeCall() {
+    	makeCoffee("brew");
     }
 
     // coffeeImage.addEventListener('click', makeCoffee);
@@ -88,7 +96,7 @@
 // USE JQUERY FOR FUNCTIONS ABOVE
 
 	coffeeImage.attr('src', 'static/coffee_beans.jpg');
-	coffeeImage.on('click', makeCoffee);
+	coffeeImage.on('click', coffeeCall);
 
     // use this JavaScript object in further study step
 
