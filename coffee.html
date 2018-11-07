@@ -61,6 +61,14 @@
     // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
 
     // // const revenueMessage;
+    const drinksOrdered = [];
+
+    const drinkPrice = {
+    	'espresso': 3.25,
+    	'latte': 4.15
+    	'hotChocolate': 2.50,
+    };
+
 
 
     function showCoffeeMug() {
@@ -81,16 +89,39 @@
     	setTimeout(showCoffeeMug, 1500)
     	setTimeout(showCoffeeBean, 4000)
 
-    	const drinksOrdered = [];
     	drinksOrdered.push(drinkType);
     	console.log(drinksOrdered);
     }
 
     function coffeeCall() {
-    	makeCoffee("brew");
+
+    	if (this.id === 'espresso') {
+    		makeCoffee("espresso");
+    	}
+
+    	else if (this.id === 'latte') {
+    		makeCoffee("latte");
+    	}
+
+    	else if (this.id === 'hot-chocolate') {
+    		makeCoffee("hot-chocolate");
+    	}
+    }
+
+    function revenue() {
+    		
     }
 
     // coffeeImage.addEventListener('click', makeCoffee);
+
+    const espresso = $('#espresso');
+    const latte = $('#latte');
+    const hotChocolate = $('#hot-chocolate');
+
+
+    espresso.on('click', coffeeCall);
+    latte.on('click', coffeeCall);
+    hotChocolate.on('click', coffeeCall);
 
 
 // USE JQUERY FOR FUNCTIONS ABOVE
